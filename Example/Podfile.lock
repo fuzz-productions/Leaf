@@ -1,0 +1,16 @@
+PODS:
+  - Leaf (0.1.0)
+
+DEPENDENCIES:
+  - Leaf (from `../`)
+
+EXTERNAL SOURCES:
+  Leaf:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Leaf: 5eb8a64f502997f039e78cbb848880073a9d3ec4
+
+PODFILE CHECKSUM: 275ba609188edb473d453e4620206e9697ab4e88
+
+COCOAPODS: 1.0.1
