@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "4F29A2D36B9AD33FC1134BEC2CBCD3671A408D45",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "00FA271CAA9EF1BA747F5F841502DBABCF3F2318" : 9223372036854775807,
+    "4F29A2D36B9AD33FC1134BEC2CBCD3671A408D45" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2FE4D9DC-E230-434A-A3CB-508711C664A4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "00FA271CAA9EF1BA747F5F841502DBABCF3F2318" : "..\/wegmans",
+    "4F29A2D36B9AD33FC1134BEC2CBCD3671A408D45" : "Leaf\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Leaf",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Example\/Leaf.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "gitlab.fuzzhq.com:ios-project\/wegmans.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "00FA271CAA9EF1BA747F5F841502DBABCF3F2318"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:fuzz-productions\/Leaf.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4F29A2D36B9AD33FC1134BEC2CBCD3671A408D45"
+    }
+  ]
+}

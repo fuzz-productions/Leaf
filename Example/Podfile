@@ -1,11 +1,10 @@
 use_frameworks!
 
 target 'Leaf_Example' do
-  pod 'Leaf', :path => '../'
+  pod 'Leaf', :path => '../code/Library/Leaf'
 
   target 'Leaf_Tests' do
     inherit! :search_paths
 
-    
   end
 end

@@ -3,6 +3,7 @@
 //  Leaf
 //
 //  Created by dstraughan on 11/10/2016.
+
 //  Copyright (c) 2016 dstraughan. All rights reserved.
 //
 
@@ -43,4 +44,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
