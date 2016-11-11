@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Array {
+public extension Array {
     
     func groupedBySection<T: Hashable>(
         groupBy: (Element) -> (T)) -> [Int: [Element]] {

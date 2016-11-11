@@ -10,7 +10,6 @@
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
-		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		6EA7252D9819BCB4087F8E69 /* Pods_Leaf_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8BBC0E1100CC4F93CA1F2A /* Pods_Leaf_Example.framework */; };
 		B55D6BB01DD51C3000AEEFB4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D6BA11DD51C3000AEEFB4 /* Model.swift */; };
@@ -24,6 +23,7 @@
 		B55D6BB81DD51C3000AEEFB4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D6BAE1DD51C3000AEEFB4 /* TableViewCell.swift */; };
 		B55D6BB91DD51C3000AEEFB4 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B55D6BAF1DD51C3000AEEFB4 /* TableViewCell.xib */; };
 		B55D6BBB1DD51C4400AEEFB4 /* Datastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D6BBA1DD51C4400AEEFB4 /* Datastore.swift */; };
+		B55D6BC91DD62EBC00AEEFB4 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55D6BC81DD62EBC00AEEFB4 /* Launch Screen.storyboard */; };
 		EBC51BA8638D29A5412D71CA /* Pods_Leaf_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B32DAE876B75C3610EFF607B /* Pods_Leaf_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +46,6 @@
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Leaf_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Leaf_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
@@ -65,6 +64,9 @@
 		B55D6BAE1DD51C3000AEEFB4 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		B55D6BAF1DD51C3000AEEFB4 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		B55D6BBA1DD51C4400AEEFB4 /* Datastore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Datastore.swift; sourceTree = "<group>"; };
+		B55D6BC41DD628E000AEEFB4 /* Leaf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Leaf.framework; path = "../../../../Library/Developer/Xcode/DerivedData/Leaf-bcrxfrheoefpxnfadqtoldmybmpg/Build/Products/Debug-iphonesimulator/Leaf/Leaf.framework"; sourceTree = "<group>"; };
+		B55D6BC61DD62B5E00AEEFB4 /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = DEVELOPER_DIR; };
+		B55D6BC81DD62EBC00AEEFB4 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		CFE969F8851636375A0CC990 /* Pods-Leaf_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leaf_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Leaf_Tests/Pods-Leaf_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F02F3440BD1D5BC5D2AF0433 /* Pods-Leaf_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leaf_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Leaf_Example/Pods-Leaf_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,8 +133,8 @@
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				B55D6BC81DD62EBC00AEEFB4 /* Launch Screen.storyboard */,
 			);
 			name = "Example for Leaf";
 			path = Leaf;
@@ -176,6 +178,8 @@
 		7E14CDAA5306B483394138B3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B55D6BC61DD62B5E00AEEFB4 /* InterfaceBuilderKit.framework */,
+				B55D6BC41DD628E000AEEFB4 /* Leaf.framework */,
 				6D8BBC0E1100CC4F93CA1F2A /* Pods_Leaf_Example.framework */,
 				B32DAE876B75C3610EFF607B /* Pods_Leaf_Tests.framework */,
 			);
@@ -327,10 +331,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B55D6BC91DD62EBC00AEEFB4 /* Launch Screen.storyboard in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				B55D6BB91DD51C3000AEEFB4 /* TableViewCell.xib in Resources */,
 				B55D6BB71DD51C3000AEEFB4 /* HeaderView.xib in Resources */,
-				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				B55D6BB51DD51C3000AEEFB4 /* CollectionViewCell.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -482,14 +486,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		607FACDE1AFB9204008FA782 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				607FACDF1AFB9204008FA782 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -530,7 +526,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -568,7 +564,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

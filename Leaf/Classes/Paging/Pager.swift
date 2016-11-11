@@ -1,6 +1,5 @@
 //
 //  Pager.swift
-//  Wegmans
 //
 //  Created by Dylan Straughan on 8/10/16.
 //  Copyright © 2016 Fuzz Productions LLC. All rights reserved.
@@ -9,14 +8,14 @@
 import UIKit
 
 /// `PagingDataRequester` provides paging data in response to `Pager` requests.
-protocol PagingDataSource: class {
+public protocol PagingDataSource: class {
     associatedtype Data
     /// Return results for a given page of data.
-    func makeRequestForResults(at offset: UInt, withLimit limit: UInt, onComplete: (([Data]?) -> Void))
+    func makeRequestForResults(at offset: UInt, withLimit limit: UInt, onComplete: @escaping (([Data]?) -> Void))
 }
 
 /// `PagingView` is the View that contains the UI that the pager interacts with.
-protocol PagingView: class {
+public protocol PagingView: class {
     /// The CollectionView, TableView, or Scrollview that shows the data that the pager retreives.
     var scrollView: UIScrollView { get }
     /// An optional view that appears while data is being refreshed.
@@ -25,7 +24,7 @@ protocol PagingView: class {
 
 /// `PagingCollectionViewDelegate` acts as the UICollectionViewDelegate or UITableViewDelegate for a collectionView
 /// or tableView with paging data.
-protocol  PagingViewDelegate: class {
+public protocol  PagingViewDelegate: class {
     associatedtype Data
     /// The variable that contains the data for the Datasource. `Pager` will sync this value
     /// when it receives data.
@@ -39,25 +38,23 @@ protocol  PagingViewDelegate: class {
     /// A function in charge of adding new data to old data
     func append(data: [Data], to oldData: [Data])
     /// Inserts new IndexPaths to PagingView's ScrollView
-    func insert(indexPaths: [IndexPath])
+    func insert(_ indexPaths: [IndexPath])
     /// Reloads data for PagingView's ScrollView
     func reloadView()
 }
 
 /// `PagingViewDelegate` extension provides generic implementation for append(data: [Data], to oldData: [Data])
-extension PagingViewDelegate {
+public extension PagingViewDelegate {
     /// Builds IndexPath Array based on an updated CellMap and inserts new cells
     /// into CollectionView or TableView based on the IndexPath Array.
     func append(data: [Data], to oldData: [Data]) {
-        guard data.count != oldData.count else {
-            return
-        }
+        guard data.count != oldData.count else { return }
         if data.count > 20 && !oldData.isEmpty {
             let indexPaths = flatMap(cellMap)
             let sliced = slice(indexPaths,
                                from: oldData.count,
                                to: indexPaths.count - 1)
-            insert(indexPaths: sliced)
+            insert(sliced)
         } else {
             reloadView()
         }
@@ -87,15 +84,16 @@ extension PagingViewDelegate {
     }
 }
 
-protocol PagingCollectionViewDelegate: PagingViewDelegate {
+public protocol PagingCollectionViewDelegate: PagingViewDelegate {
     var collectionView: UICollectionView! { get }
 }
 
+
+
 /// `PagingViewDelegate` extension provides specific implementation for
 /// insert(indexPaths: [IndexPath]) and reloadView for UICollectionViews
-extension PagingCollectionViewDelegate {
+public extension PagingCollectionViewDelegate {
     func insert(_ indexPaths: [IndexPath]) {
-        print("insert")
         
         collectionView.performBatchUpdates({
             // Determine if new sections must be inserted.
@@ -121,13 +119,41 @@ extension PagingCollectionViewDelegate {
     }
 }
 
+public protocol PagingTableViewDelegate: PagingViewDelegate {
+    var tableView: UITableView! { get }
+}
+
+public extension PagingTableViewDelegate {
+    func insert(_ indexPaths: [IndexPath]) {
+        // Determine if new sections must be inserted.
+        let oldFinalSection = self.tableView.numberOfSections - 1
+        let newFinalSection = indexPaths.last?.section ?? 0
+        
+        if oldFinalSection < newFinalSection {
+            // Insert new sections.
+            let range = ClosedRange(uncheckedBounds: (oldFinalSection, newFinalSection))
+            let indexSet = IndexSet(integersIn: range)
+            print(indexPaths)
+            tableView.insertSections(indexSet, with: .automatic)
+        }
+        
+        // Insert items.
+        self.tableView.insertRows(at: indexPaths, with: .automatic)
+    }
+    
+    func reloadView() {
+        tableView.reloadData()
+    }
+    
+}
+
 /// `Pager` handles the brunt of paging concerns for `PagingView` with paging data. These concerns include:
 /// - Detecting when a new page of data is required
 /// - Initiating paging data requests
 /// - Updating the collectionView to represent request state
 /// - Responding to completed requests by syncing displayed data
 /// - Handling the showing and hiding of a loading indicator
-class Pager<DataSource, Delegate, View>: NSObject where DataSource: PagingDataSource,
+public class Pager<DataSource, Delegate, View>: NSObject where DataSource: PagingDataSource,
 		  Delegate: NSObject,
           Delegate: PagingViewDelegate,
           View: PagingView,
@@ -143,7 +169,7 @@ class Pager<DataSource, Delegate, View>: NSObject where DataSource: PagingDataSo
     
     // MARK: Settings
     /// The number of results displayed per page. By default, 20.
-    var pageLimit: UInt = 20
+    public var pageLimit: UInt = 20
     /// The distance from the bottom of the scrollview that, when exceeded, will triger a fetch for a new page of data. If 100,
     /// for example, a new page will be fetched when a user scrolls within 100 points of the bottom of the scrollview.
     var remainingScrollDistanceTrigger: CGFloat = 150
@@ -216,7 +242,7 @@ class Pager<DataSource, Delegate, View>: NSObject where DataSource: PagingDataSo
     /// - parameter view: The collectionView displaying paging data.
     /// - parameter dataSource: The component responsible for fetching paging data.
     /// - parameter delegate: The component responsible for managing the paging collectionView.
-    func set(view view: View,
+    public func set(view view: View,
              dataSource: DataSource,
              delegate: Delegate) {
         self.view = view
@@ -224,7 +250,7 @@ class Pager<DataSource, Delegate, View>: NSObject where DataSource: PagingDataSo
         self.delegate = delegate
     }
     /// Adds LoadMoreSpinner View to View. Must not be nil on PagerView.
-    func addLoadMoreSpinnerView() {
+    public func addLoadMoreSpinnerView() {
         loadMoreSpinnerEnabled = true
         if let loadMoreSpinnerView = loadMoreSpinnerView,
             let scrollView = self.scrollView , view?.loadMoreSpinnerView?.superview == nil {
@@ -255,7 +281,7 @@ class Pager<DataSource, Delegate, View>: NSObject where DataSource: PagingDataSo
     ///
     /// - parameter data: The initial data displayed in the paging collectionView.
     /// - note: Setting initial data will trigger UI refreshes and dataSource syncs.
-    func set(initialData data: [DataSource.Data]) {
+    public func set(initialData data: [DataSource.Data]) {
         if !isDisabled {
             delegate?.data = []
             delegate?.data = data

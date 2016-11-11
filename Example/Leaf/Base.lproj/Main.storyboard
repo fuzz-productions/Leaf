@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="A72-M6-P2Q">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -63,7 +62,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="UhW-9u-btH" kind="show" id="8Bf-qn-lKC"/>
+                                                    <segue destination="UhW-9u-btH" kind="show" identifier="CollectionViewSegue" id="8Bf-qn-lKC"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -88,7 +87,7 @@
         <!--Table View Controller-->
         <scene sceneID="LAJ-0K-Smr">
             <objects>
-                <viewController id="6Va-VN-9mr" customClass="TableViewController" sceneMemberID="viewController">
+                <viewController id="6Va-VN-9mr" customClass="TableViewController" customModule="Leaf_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ROt-c1-06A"/>
                         <viewControllerLayoutGuide type="bottom" id="V0U-gn-PmN"/>
@@ -109,6 +108,9 @@
                             <constraint firstAttribute="trailing" secondItem="PUx-8f-V4o" secondAttribute="trailing" id="wmN-lX-I5C"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="PUx-8f-V4o" id="7VN-FU-mY7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zAA-ev-XNx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,7 +119,7 @@
         <!--Collection View Controller-->
         <scene sceneID="eoh-R5-bqu">
             <objects>
-                <viewController id="UhW-9u-btH" customClass="CollectionViewController" sceneMemberID="viewController">
+                <viewController id="UhW-9u-btH" customClass="CollectionViewController" customModule="Leaf_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bSU-17-3Lr"/>
                         <viewControllerLayoutGuide type="bottom" id="YOq-GH-vW7"/>
@@ -154,6 +156,9 @@
                             <constraint firstItem="Omd-h7-bgq" firstAttribute="leading" secondItem="tmi-B9-O3J" secondAttribute="leading" id="y3l-9L-NfA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Omd-h7-bgq" id="DLe-wT-TgP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mWZ-2P-ekn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -179,7 +184,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="W1s-Xf-2Mm"/>
-        <segue reference="Upm-nt-9B3"/>
+        <segue reference="PZZ-xP-q8l"/>
+        <segue reference="8Bf-qn-lKC"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "summary": "A short description of Leaf.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/Leaf",
+  "homepage": "https://github.com/fuzz-productions/Leaf",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "dstraughan": "dstraughan@fuzzproductions.local"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/Leaf.git",
+    "git": "https://github.com/fuzz-productions/Leaf.git",
     "tag": "0.1.0"
   },
   "platforms": {

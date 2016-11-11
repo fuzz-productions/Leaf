@@ -2,15 +2,15 @@ PODS:
   - Leaf (0.1.0)
 
 DEPENDENCIES:
-  - Leaf (from `../`)
+  - Leaf (from `~/code/Library/Leaf`)
 
 EXTERNAL SOURCES:
   Leaf:
-    :path: ../
+    :path: ~/code/Library/Leaf
 
 SPEC CHECKSUMS:
-  Leaf: 5eb8a64f502997f039e78cbb848880073a9d3ec4
+  Leaf: d3cd6b0205d330fd03841e55df19a17129fc79b5
 
-PODFILE CHECKSUM: 275ba609188edb473d453e4620206e9697ab4e88
+PODFILE CHECKSUM: 4788f37536a9caa6e6a0ef5846fe2c6f7606967f
 
 COCOAPODS: 1.0.1

@@ -23,14 +23,17 @@ struct Datastore {
     }
     
     func request(at offset: Int, limit: Int, onComplete: (([Model]) -> (Void))) {
-        var endLimit: Int {
-            if models.count < offset + limit {
-                return offset + limit - 1
-            } else {
-                return models.count - 1
-            }
+        
+        if !models.isEmpty {
+            var endLimit = 0
+                if models.count > offset + limit {
+                    endLimit = offset + limit - 1
+                } else {
+                    endLimit = models.count - 1
+                }
+            let returnArray = Array(models[offset...endLimit])
+            onComplete(returnArray)
         }
-        let returnArray = Array(models[offset...endLimit])
-        onComplete(returnArray)
+        onComplete([])
     }
 }
