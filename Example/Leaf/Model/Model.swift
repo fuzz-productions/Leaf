@@ -18,7 +18,7 @@ enum Leafyness: String {
 struct Model {
     
     var int: Int?
-    var color: UIColor?
+    var color = UIColor.random
     var leafyValue: Leafyness {
         let value = arc4random_uniform(3)
         switch value {
