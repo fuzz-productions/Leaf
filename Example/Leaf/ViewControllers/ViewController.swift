@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        Datastore.sharedDatastore.loadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -33,9 +34,6 @@ class ViewController: UIViewController {
         default:
             break
         }
-        
-        var vc = segue.destination
-        
     }
 }
 

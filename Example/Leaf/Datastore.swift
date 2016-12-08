@@ -8,12 +8,12 @@
 
 import UIKit
 
-struct Datastore {
+final class Datastore {
     
     static let sharedDatastore = Datastore()
     var models: [Model] = []
     
-    mutating func loadData() {
+    func loadData() {
         var cpy: [Model] = []
         for int in 0...150 {
             let model = Model(int: int, color: UIColor(hue: CGFloat(int/150), saturation: 1, brightness: 1, alpha: 1))
@@ -23,7 +23,6 @@ struct Datastore {
     }
     
     func request(at offset: Int, limit: Int, onComplete: (([Model]) -> (Void))) {
-        
         if !models.isEmpty {
             var endLimit = 0
                 if models.count > offset + limit {
@@ -33,7 +32,8 @@ struct Datastore {
                 }
             let returnArray = Array(models[offset...endLimit])
             onComplete(returnArray)
+        } else {
+           onComplete([])
         }
-        onComplete([])
     }
 }
