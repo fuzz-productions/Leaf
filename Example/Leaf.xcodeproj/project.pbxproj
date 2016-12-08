@@ -12,6 +12,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		6EA7252D9819BCB4087F8E69 /* Pods_Leaf_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D8BBC0E1100CC4F93CA1F2A /* Pods_Leaf_Example.framework */; };
+		B51ED24F1DF7382D00E7D05E /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51ED24E1DF7382D00E7D05E /* UIColor+Extensions.swift */; };
 		B55D6BB01DD51C3000AEEFB4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D6BA11DD51C3000AEEFB4 /* Model.swift */; };
 		B55D6BB11DD51C3000AEEFB4 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D6BA31DD51C3000AEEFB4 /* CollectionViewController.swift */; };
 		B55D6BB21DD51C3000AEEFB4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55D6BA41DD51C3000AEEFB4 /* TableViewController.swift */; };
@@ -53,6 +54,7 @@
 		86F34F5D70FDCC17988E01D4 /* Pods-Leaf_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Leaf_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Leaf_Example/Pods-Leaf_Example.release.xcconfig"; sourceTree = "<group>"; };
 		89D86698CE92039A76F48BB9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		B32DAE876B75C3610EFF607B /* Pods_Leaf_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Leaf_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B51ED24E1DF7382D00E7D05E /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		B55D6BA11DD51C3000AEEFB4 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		B55D6BA31DD51C3000AEEFB4 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		B55D6BA41DD51C3000AEEFB4 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 		607FACD21AFB9204008FA782 /* Example for Leaf */ = {
 			isa = PBXGroup;
 			children = (
+				B51ED24D1DF7380600E7D05E /* Extensions */,
 				B55D6BBA1DD51C4400AEEFB4 /* Datastore.swift */,
 				B55D6BA01DD51C3000AEEFB4 /* Model */,
 				B55D6BA21DD51C3000AEEFB4 /* ViewControllers */,
@@ -184,6 +187,14 @@
 				B32DAE876B75C3610EFF607B /* Pods_Leaf_Tests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B51ED24D1DF7380600E7D05E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B51ED24E1DF7382D00E7D05E /* UIColor+Extensions.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		B55D6BA01DD51C3000AEEFB4 /* Model */ = {
@@ -448,6 +459,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B55D6BB31DD51C3000AEEFB4 /* ViewController.swift in Sources */,
+				B51ED24F1DF7382D00E7D05E /* UIColor+Extensions.swift in Sources */,
 				B55D6BB11DD51C3000AEEFB4 /* CollectionViewController.swift in Sources */,
 				B55D6BB01DD51C3000AEEFB4 /* Model.swift in Sources */,
 				B55D6BBB1DD51C4400AEEFB4 /* Datastore.swift in Sources */,

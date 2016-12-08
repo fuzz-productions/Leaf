@@ -18,6 +18,7 @@ class TableViewCell: UITableViewCell {
     
     func configure(with model: Model) {
         intLabel.text = model.int != nil ? "\(model.int!)" : ""
-        backgroundColor = model.color ?? UIColor.white
+        contentView.backgroundColor = model.color
+        selectionStyle = .none
     }
 }

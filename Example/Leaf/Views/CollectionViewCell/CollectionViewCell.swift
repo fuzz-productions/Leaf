@@ -18,6 +18,6 @@ class CollectionViewCell: UICollectionViewCell {
     
     func configure(with model: Model) {
         intLabel.text = model.int != nil ? "\(model.int!)" : ""
-        backgroundColor = model.color ?? UIColor.white
+        contentView.backgroundColor = model.color
     }
 }
