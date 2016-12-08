@@ -193,7 +193,7 @@ public class Pager<DataSource, Delegate, View>: NSObject where DataSource: Pagin
     
     // MARK: Private
     /// Pointer to memory location for ScrollView contentOffset used with KVO
-    private var kvoScrollViewDidScrollContext: UInt8 = 1
+    private var kvoScrollViewDidScrollContext: UnsafeMutableRawPointer?
     /// The collectionView or tableView displaying paging data.
     var scrollView: UIScrollView? {
         let scrollView = view?.scrollView
@@ -285,17 +285,15 @@ public class Pager<DataSource, Delegate, View>: NSObject where DataSource: Pagin
         if !isDisabled {
             delegate?.data = []
             delegate?.data = data
-            print("data count \(data.count)")
+            //print("data count \(data.count)")
             resultCount = UInt(data.count)
             isFinishedPaging = false
         }
     }
     
-    // MARK: - <UIScrollViewDelegate>
-    func observeValueForKeyPath(keyPath: String?,
-                                         ofObject object: AnyObject?,
-                                         change: [String : AnyObject]?,
-                                         context: UnsafeMutablePointer<Void>) {
+    // MARK: - <KVO>
+    
+    public override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if context == &kvoScrollViewDidScrollContext,
             let scrollView = object as? UIScrollView {
             scrollViewDidScroll(scrollView: scrollView)
@@ -437,5 +435,9 @@ public class Pager<DataSource, Delegate, View>: NSObject where DataSource: Pagin
         } else {
             onCompletion?(true)
         }
+    }
+    
+    deinit {
+        removeObserver(self, forKeyPath: "contentOffset")
     }
 }
