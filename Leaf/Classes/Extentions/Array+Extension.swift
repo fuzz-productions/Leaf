@@ -10,6 +10,7 @@ import Foundation
 
 public extension Array {
     
+    /// Groups an array by a property on array's Element
     func groupedBySection<T: Hashable>(
         groupBy: (Element) -> (T)) -> [Int: [Element]] {
         
