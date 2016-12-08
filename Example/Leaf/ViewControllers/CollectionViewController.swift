@@ -40,7 +40,14 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataStore.loadData()
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
+
+        pager.set(view: self, dataSource: self, delegate: self)
+        pager.addLoadMoreSpinnerView()
+        
         loadInitialData()
     }
     
@@ -61,7 +68,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         case .sections:
             return cellMap.count
         default:
-            return 0
+            return 1
         }
     }
     

@@ -11,6 +11,8 @@ import Leaf
 
 class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PagingTableViewDelegate, PagingDataSource, PagingView {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     var data: [Model] = [] {
         didSet {
             switch sectionType {
@@ -24,22 +26,26 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
             append(data: data, to: oldValue)
         }
     }
+    
     var sectionType: SectionType = .none
     var cellMap = [Int: [Model]]()
     var loadMoreSpinnerView: LoadMoreSpinnerView? = LoadMoreSpinnerView()
     var scrollView: UIScrollView { return tableView }
     var pager = Pager<TableViewController, TableViewController, TableViewController>()
     var dataStore = Datastore.sharedDatastore
-
-    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCell")
+        
         pager.set(view: self, dataSource: self, delegate: self)
-        dataStore.loadData()
+        pager.addLoadMoreSpinnerView()
+        
         loadInitialData()
+        
     }
     
     func loadInitialData() {
@@ -68,5 +74,4 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.configure(with: model)
         return cell
     }
-    
 }
