@@ -16,7 +16,8 @@ final class Datastore {
     func loadData() {
         var cpy: [Model] = []
         for int in 0...150 {
-            let model = Model(int: int, color: UIColor(hue: CGFloat(int/150), saturation: 1, brightness: 1, alpha: 1))
+            var model = Model()
+            model.int = int 
             cpy.append(model)
         }
         models = cpy

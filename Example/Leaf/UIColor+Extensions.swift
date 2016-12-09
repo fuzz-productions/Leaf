@@ -11,7 +11,7 @@ import UIKit
 extension UIColor {
     static var random: UIColor {
         func randomInt() -> CGFloat {
-            return CGFloat(arc4random()) / CGFloat(UInt32.max)
+            return CGFloat(arc4random_uniform(255)) / CGFloat(UInt32(255))
         }
         return UIColor(red: randomInt(),
                        green: randomInt(),
