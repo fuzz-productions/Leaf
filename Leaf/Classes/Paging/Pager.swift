@@ -285,7 +285,6 @@ public class Pager<DataSource, Delegate, View>: NSObject where DataSource: Pagin
         if !isDisabled {
             delegate?.data = []
             delegate?.data = data
-            //print("data count \(data.count)")
             resultCount = UInt(data.count)
             isFinishedPaging = false
         }

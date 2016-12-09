@@ -53,7 +53,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     
     func loadInitialData() {
         dataStore.request(at: 0, limit: Int(pager.pageLimit)) { (data) -> (Void) in
-            pager.set(initialData: data)
+            self.pager.set(initialData: data)
         }
     }
     
@@ -105,6 +105,6 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        return CGSize(width: view.frame.size.width/3, height: 80)
+        return CGSize(width: view.frame.size.width/2.2, height: view.frame.size.width/2.2)
     }
 }

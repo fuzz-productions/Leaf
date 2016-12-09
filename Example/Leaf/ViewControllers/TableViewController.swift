@@ -50,7 +50,8 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func loadInitialData() {
         dataStore.request(at: 0, limit: Int(pager.pageLimit)) { (data) -> (Void) in
-            pager.set(initialData: data)
+            print(data[0])
+            self.pager.set(initialData: data)
         }
     }
     
