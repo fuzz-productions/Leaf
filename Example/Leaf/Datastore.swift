@@ -23,7 +23,7 @@ final class Datastore {
         models = cpy
     }
     
-    func request(at offset: Int, limit: Int, onComplete: (([Model]) -> (Void))) {
+    func request(at offset: Int, limit: Int, onComplete: @escaping (([Model]) -> (Void))) {
         if !models.isEmpty {
             var endLimit = 0
                 if models.count > offset + limit {
@@ -32,7 +32,10 @@ final class Datastore {
                     endLimit = models.count - 1
                 }
             let returnArray = Array(models[offset...endLimit])
-            onComplete(returnArray)
+            let delay = DispatchTime.now() + 1.25
+            DispatchQueue.main.asyncAfter(deadline: delay, execute: { 
+                onComplete(returnArray)
+            })
         } else {
            onComplete([])
         }
